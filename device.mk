@@ -19,6 +19,7 @@ PRODUCT_TARGET_VNDK_VERSION := 34
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_PACKAGES += \
+    aera-browser-jail \
     lpflash \
     lpmake \
     lpunpack
