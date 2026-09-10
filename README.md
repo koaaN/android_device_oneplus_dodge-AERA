@@ -1,42 +1,33 @@
-# OnePlus 13 dodge Android device tree
+# AERA Recovery Project device tree for OnePlus 13 (dodge)
+
+Device configuration and recovery ramdisk assets used to build AERA Recovery
+Project for the OnePlus 13 (`dodge`).
 
 ## Working
 
-- [X] Display
-- [X] Touch (Even in FastbootD)
-- [X] Decryption
-- [X] Flashing
-- [X] Backup & Restore
-- [X] MTP/OTG Storage
-- [X] ADB/FastbootD
-- [X] Factory Reset
-- [X] Vibrator
-- [X] Display & Vibration Settings
+- Display and touch, including fastbootd
+- Data decryption
+- Flashing, backup, and restore
+- MTP and USB OTG storage
+- ADB and fastbootd
+- Wi-Fi and network storage support
+- GPU-accelerated recovery UI
+- Audio and haptics
+- Factory reset
 
-## Not working
-- [ ] ????????
+## Build
 
-# How To Build
+Place this repository at `device/oneplus/dodge` in the AERA 16.0 source tree,
+then build with:
 
-### Clone & Sync Source
-```
-mkdir -p ~/android/OrangeFox_14
-cd ~/android/OrangeFox_14
-git clone https://gitlab.com/OrangeFox/sync.git
-cd sync
-./orangefox_sync.sh --branch 14.1 --path ~/android/fox_14.1
-```
-### Clone Device-tree
-```
-cd ~/android/fox_14.1/device
-mkdir -p oneplus
-cd oneplus
-git clone https://github.com/koaaN/android_device_oneplus_dodge-orangefox.git dodge
-```
-### BUILD!
-```
-cd ~/android/fox_14.1
+```sh
 source build/envsetup.sh
-lunch twrp_dodge-ap2a-eng
+lunch twrp_dodge-bp2a-eng
 mka adbd recoveryimage
 ```
+
+## History
+
+This repository retains the commit history of
+[`android_device_oneplus_dodge-orangefox`](https://github.com/koaaN/android_device_oneplus_dodge-orangefox)
+and continues development for AERA Recovery Project on the `aera-16.0` branch.
